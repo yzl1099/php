@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jsp" default="dist" basedir="./">
+	<property name="classes" value="classes"></property>
+	<property name="lib" value="lib"></property>
+	<property name="jar" value="jar"></property>
+	<target name="init">
+		<mkdir dir="classes"/>
+		<mkdir dir="jar"/>
+		<mkdir dir="build.dir"/>
+		<tstamp></tstamp>
+	</target>
+	
+	 <path id="build.classpath">
+	       <fileset dir="../src">
+	           <include name="*.jar"/>
+	       </fileset>
+	       <pathelement location="${lib}"/>
+	   </path>
+	
+	<target name="compile" depends="init">
+		<javac srcdir="../src" destdir="${classes}" includeantruntime="on" >
+			<classpath refid="${lib}"></classpath>
+		</javac>
+		
+	</target>
+	
+	<target name="jar" depends="compile">
+		<jar destfile="$jsp-${DSTAMP}.jar" basedir="${jar}" >
+			<fileset dir="${lib}">
+			      <include name="**/*.class"/>
+			</fileset>
+		</jar>
+	</target>
+	
+	<target name="dist" depends="jar"></target>
+
+</project>
