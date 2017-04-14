@@ -4,14 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>首页</title>
+<title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath }test.css" type="text/css">
 </head>
 <body>
-	<p>这是首页</p>
-	<hr>
-	<a href="main">注册</a>
-	<a href="main">登录</a>
-	<a href="main">管理</a>
+	<div class="top">
 	
+	</div>
 </body>
 </html>
