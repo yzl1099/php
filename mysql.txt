@@ -1,0 +1,1 @@
+mysql -u mblog -p root
